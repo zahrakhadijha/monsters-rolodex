@@ -11,16 +11,17 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then((response) => response.json())
-			.then((users) => this.setState({ monsters: users }))
+		fetch('https://jsonplaceholder.typicode.com/users').then((response) =>
+			response.json()
+        )
+        .then(users => this.setState({ monsters: users}))
 	}
 
 	render() {
 		return (
 			<>
 				{this.state.monsters.map((monster) => (
-                    <h1 key={monster.id}> {monster.name} </h1>
+					<h1 key={monster.id}> {monster.name} </h1>
 				))}
 			</>
 		)
